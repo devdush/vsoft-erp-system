@@ -11,7 +11,12 @@ function App() {
   return (
     <div className="App">
       <CssBaseline />
-      <Sidebar />
+      <div style={{
+        transition: 'width 0.3s'
+        }}>
+          <Sidebar />
+        </div>
+      
       <div style={{
         marginLeft: isSmallScreen? 80:240,
         transition: 'margin 0.3s'
