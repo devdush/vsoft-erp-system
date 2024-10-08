@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Box, Typography, Tooltip } from '@mui/material';
+import { Drawer, List, ListItem, ListItemIcon, ListItemText, Box, Typography, Tooltip, useTheme, useMediaQuery } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import InventoryIcon from '@mui/icons-material/Inventory';
@@ -11,9 +11,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import BusinessIcon from '@mui/icons-material/Business';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import { useMediaQuery } from '@mui/material';
 
 const Sidebar = () => {
+  const theme = useTheme(); // Access the current theme
   const isSmallScreen = useMediaQuery('(max-width: 800px)'); // Adjust width as needed
 
   const menuItems = [
@@ -39,9 +39,10 @@ const Sidebar = () => {
         flexShrink: 0,
         '& .MuiDrawer-paper': {
           width: isSmallScreen ? 80 : 240,
-          transition: 'opacity 0.3s',
+          transition: 'width 0.3s, opacity 0.3s',
           boxSizing: 'border-box',
-          backgroundColor: 'white',
+          backgroundColor: theme.palette.background.default, // Dynamic background based on theme
+          color: theme.palette.text.primary, // Dynamic text color based on theme
         },
       }}
     >
@@ -50,8 +51,8 @@ const Sidebar = () => {
           textAlign: 'center', 
           p: 2, 
           fontWeight: 'bold', 
-          backgroundColor: '#1976d2', 
-          color: 'white',
+          backgroundColor: theme.palette.primary.main, // Use theme primary color for header
+          color: theme.palette.primary.contrastText, // Use contrast text color for header
         }}
       >
         <Typography variant="h6">
@@ -61,24 +62,30 @@ const Sidebar = () => {
 
       <List>
         {menuItems.map((item, index) => (
-          <Tooltip key={index} title={item.text} placement="right" arrow disableHoverListener={!isSmallScreen}>
+          <Tooltip 
+            key={index} 
+            title={item.text} 
+            placement="right" 
+            arrow 
+            disableHoverListener={!isSmallScreen} // Only show tooltip on small screens
+          >
             <ListItem 
               button 
               sx={{ 
                 '&:hover': { 
-                  backgroundColor: '#f0f5f8',
-                  color: '#317EB9', 
-                  '& .MuiListItemIcon-root': { // Target the icon
-                    color: '#317EB9',
+                  backgroundColor: theme.palette.action.hover, // Hover background color from theme
+                  color: theme.palette.primary.main, // Change text color on hover
+                  '& .MuiListItemIcon-root': { // Target icon color on hover
+                    color: theme.palette.primary.main,
                   },
                 },
-                color: 'black', 
+                color: theme.palette.text.primary, // Default text color
                 justifyContent: isSmallScreen ? 'center' : 'flex-start',
               }}
             >
               <ListItemIcon 
                 sx={{ 
-                  color: 'black', 
+                  color: theme.palette.text.primary, // Default icon color
                   minWidth: 'auto', 
                   marginRight: isSmallScreen ? '0' : '10px', 
                   marginBottom: isSmallScreen ? '9px' : '' 
