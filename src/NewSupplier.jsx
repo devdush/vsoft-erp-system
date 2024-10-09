@@ -373,29 +373,37 @@ export default function NewSupplier() {
       >
         {/* Upload Photo Section (Column 1) */}
         <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h6" sx={{ color: '#333', marginBottom: '20px' }}>
-            Upload Photo
-          </Typography>
-          <label htmlFor="image-upload">
-            <Input
-              accept="image/png, image/jpeg"
-              id="image-upload"
-              type="file"
-              style={{ display: 'none' }}
-              onChange={handleImageUpload}
-            />
-            <Avatar
-              alt="Profile Image"
-              src={imagePreview || '/default-avatar.png'}
-              sx={{
-                width: { xs: '100px', md: '150px' },
-                height: { xs: '100px', md: '150px' },
-                border: '2px dashed #ccc',
-                cursor: 'pointer',
-                margin: 'auto',
-              }}
-            />
-          </label>
+        <Typography variant="h6" sx={{ color: '#333', marginBottom: '20px' }}>
+  Upload Photo
+</Typography>
+<label htmlFor="image-upload">
+  <Input
+    accept="image/png, image/jpeg"
+    id="image-upload"
+    type="file"
+    style={{ display: 'none' }}
+    onChange={handleImageUpload}
+  />
+  <Avatar
+    alt="Profile Image"
+    src={imagePreview || ''}
+    sx={{
+      width: { xs: '100px', md: '150px' },
+      height: { xs: '100px', md: '150px' },
+      border: '2px dashed #ccc',
+      cursor: 'pointer',
+      margin: 'auto',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '48px', // Adjust font size for the emoji or icon
+    }}
+  >
+    {imagePreview ? null : '📷'}
+  </Avatar>
+</label>
+
+         
           <Typography variant="body2" sx={{ color: '#777', marginTop: '10px' }}>
             Allowed formats: JPG, JPEG, and PNG <br />
             Max file size: 2MB
@@ -495,7 +503,7 @@ export default function NewSupplier() {
           sx={{
             padding: '10px 30px',
             fontSize: '16px',
-            background: 'linear-gradient(to right, #6a11cb, #2575fc)',
+            background: 'linear-gradient(to right, #56CCF2, #2F80ED)',
           }}
         >
           Add Supplier
