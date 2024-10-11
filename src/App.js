@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import DashboardLayoutBasic from './Components/Dashboard';
 
@@ -6,7 +7,9 @@ function App() {
 
   return (
     <div className="App">
-    <DashboardLayoutBasic/>
+    <BrowserRouter>
+      <DashboardLayoutBasic/>
+    </BrowserRouter>
     </div>
   );
 }
