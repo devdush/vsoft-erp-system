@@ -1,15 +1,16 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import DashboardLayoutBasic from './Components/Dashboard';
+import ProductList from './ProductList';
 
 
 function App() {
 
   return (
     <div className="App">
-    <BrowserRouter>
-      <DashboardLayoutBasic/>
-    </BrowserRouter>
+      <Router>
+        <DashboardLayoutBasic/>
+      </Router>
     </div>
   );
 }

@@ -6,8 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import Content from './Content';
-import ContentX from './Content copy'; // Replace with your actual component for Staff
-import ContentY from './Content copy 2'; // Replace with your actual component for Supplier, Inventory, etc.
+import ContentY from './Content copy 2'; 
 
 import BarChartIcon from '@mui/icons-material/BarChart';
 import DescriptionIcon from '@mui/icons-material/Description';
@@ -22,8 +21,12 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import BusinessIcon from '@mui/icons-material/Business';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import UserDropdown from './UserDropdown';
-import StaffList from './StaffList';
-import AddStaffForm from './AddStaffForm';
+import AddStaffForm from '../AddStaffForm';
+import StaffManagement from '../StaffManagement';
+import AddProduct from '../AddProduct';
+import NewSupplier from '../NewSupplier';
+import ProductList from '../ProductList';
+import Inventory from '../Inventory';
 // Define the navigation
 const NAVIGATION = [
   {
@@ -145,9 +148,9 @@ function DemoPageContent({ pathname }) {
       }}
     >
       {pathname === '/dashboard' && <Content />}
-      {pathname === '/staff' && <AddStaffForm />} 
-      {pathname === '/supplier' && <ContentY />} 
-      {pathname === '/inventory' && <ContentY />} 
+      {pathname === '/staff' && < StaffManagement/>} 
+      {pathname === '/supplier' && <NewSupplier />} 
+      {pathname === '/inventory' && <Inventory />} 
       {pathname === '/order' && <ContentY />}
       {pathname === '/reports/sales' && <ContentY />} 
       {pathname === '/reports/traffic' && <ContentY />} 
@@ -157,9 +160,7 @@ function DemoPageContent({ pathname }) {
       {pathname === '/notifications' && <ContentY />} 
       {pathname === '/logout' && <ContentY />}
 
-      <UserDropdown
-        
-      />
+      <UserDropdown/>
 
     </Box>
   );
@@ -179,6 +180,7 @@ function DashboardLayoutBasic(props) {
   }, [pathname]);
 
   return (
+    
     <ThemeProvider theme={demoTheme}> {/* Wrap with ThemeProvider */}
       <AppProvider
         navigation={NAVIGATION}
@@ -193,6 +195,7 @@ function DashboardLayoutBasic(props) {
         </DashboardLayout>
       </AppProvider>
     </ThemeProvider>
+    
   );
 }
 

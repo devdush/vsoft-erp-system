@@ -17,8 +17,10 @@ const AddStaffForm = () => {
     // Add form submit logic here
     console.log('Form submitted');
   };
+ 
 
   return (
+    
     <form onSubmit={handleSubmit} style={{ padding: '20px'}}>
       <Typography variant="h5" marginBottom={5} fontWeight={700}>
         Add a New Staff
@@ -36,8 +38,8 @@ const AddStaffForm = () => {
           <label htmlFor="upload-photo">
             <IconButton component="span">
               <Avatar
-                src={photo || '/placeholder.png'} // Placeholder image
-                style={{ width: '150px', height: '150px' }}
+                src={photo || '/placeholder.png'} // Placeholder image 
+                style={{ width: '150px', height:'150px' }}
               >
                 <CloudUpload />
               </Avatar>
