@@ -17,6 +17,8 @@ import Notifications from "./Scenes/admin/notifications";
 import CompanyInfo from "./Scenes/admin/company-info";
 import Settings from "./Scenes/admin/settings";
 import Profile from "./Scenes/admin/profile";
+import CreateSupplier from "./Scenes/admin/create-supplier";
+import ManageSupplier from "./Scenes/admin/manage-supplier";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path="company-info" element={<CompanyInfo />} />
           <Route path="settings" element={<Settings />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="create-supplier" element={<CreateSupplier />} />
+          <Route path="update-supplier" element={<ManageSupplier />} />
         </Route>
       </Routes>
     </div>

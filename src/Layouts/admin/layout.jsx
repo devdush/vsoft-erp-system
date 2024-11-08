@@ -22,6 +22,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import FeedIcon from "@mui/icons-material/Feed";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PersonIcon from "@mui/icons-material/Person";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 const NAVIGATION = [
   {
     segment: "admin/dashboard",
@@ -58,6 +59,23 @@ const NAVIGATION = [
       {
         segment: "item-update",
         title: "Manage Items",
+        icon: <CreateIcon />,
+      },
+    ],
+  },
+  {
+    segment: "admin",
+    title: "Suppliers",
+    icon: <LocalShippingIcon />,
+    children: [
+      {
+        segment: "create-supplier",
+        title: "Create Supplier",
+        icon: <AddIcon />,
+      },
+      {
+        segment: "update-supplier",
+        title: "Manage Suppliers",
         icon: <CreateIcon />,
       },
     ],
