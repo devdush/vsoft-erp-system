@@ -1,0 +1,240 @@
+body {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+.order{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1500px;
+}
+.orderhp{
+    line-height: 0.5;
+    text-align: left;
+    font-weight: bold;
+    
+}
+.header-inventory{
+    display: flex;
+    gap: 80px;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+    width: 1500px;
+}
+.header-inventory h3{
+    font-size: 30px;   
+}
+
+.Icon{
+    align-self: center;
+    padding-left: 80px;   
+}
+.icon1{
+    background-color: rgb(203, 225, 253);
+    padding: 10px;
+    margin: 5px;
+    align-self: center;
+    border-radius: 50%;
+    color: blue;
+}
+.icon2{
+    background-color: rgb(253, 237, 203);
+    
+    padding: 10px;
+    margin: 5px;
+    align-self: center;
+    border-radius: 50%;
+    
+    color: rgb(255, 153, 0)
+}
+.icon3{
+    background-color: rgb(226, 203, 253);
+    padding: 10px;
+    margin: 5px;
+    align-self: center;
+    border-radius: 50%;
+    color: rgb(162, 0, 255);
+
+}
+.icon4{
+    background-color: rgb(203, 253, 211);
+    padding: 10px;
+    margin: 5px;
+    align-self: center;
+    border-radius: 50%;
+    color: rgb(21, 158, 51)
+
+}
+.tot-req-count{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 140px;
+    line-height: 0.1;
+    text-align: left;
+}
+.tot-req-count-hp{
+    margin-left: 10px;
+}
+.cost-count{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    height: 140px;
+    line-height: 0.1;
+    text-align: left;
+
+}
+.cost-count-hp{
+    margin-left: 10px;
+}
+.pending-req-count{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    height: 140px;
+    line-height: 0.1;
+    text-align: left;
+
+}
+.pending-req-count-hp{
+    margin-left: 10px;
+}
+.approved-req-count{
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    height: 140px;
+    line-height: 0.1;
+    text-align: left;
+
+}
+.approved-req-count-hp{
+    margin-left: 10px;
+}
+
+.order-req{
+    display: flex;
+    justify-content: space-evenly;
+    width: 1470px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 100px;
+    align-items: center;
+    gap: 900px;
+    margin-left: 27px;
+}
+.order-req h3{
+    font-size: 22px;  
+}
+.btn-add-order{
+    height: 50px;
+    width: 300px;
+    border-radius: 15px;
+    background-image: linear-gradient(to right,#14ADD6, #384295);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.stocks-table{
+    background-color: #ffffff;
+    margin: 50px;
+    border-radius: 20px;
+    width: 1530px;
+}
+/* Staff table styling */
+.stocks-table{
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 1500px;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+  .stocks-table table {
+    width: 100%;
+    border-collapse: collapse;
+    
+  }
+  .stocks-table td{
+    padding: 5px 5px;
+    text-align: left;
+  }
+  .stocks-table th {
+    padding: 5px 5px;
+    text-align: center;
+  }
+
+  .stocks-table td{
+    border-bottom: 1px solid #ddd;
+  }
+  .stocks-table tr{
+    height: 50px;
+  }
+  
+  .stocks-table th {
+    background-color: #ffff;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+  
+  .stocks-table tr:hover {
+    background-color: #003bdf28;
+  }
+  .input-field{
+    margin-left: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    font-size: 16px; 
+    padding: 10px;
+    border-radius: 5px;
+    border: #cfcfcf 1px solid;
+}
+
+@media (max-width: 1900px) {
+    .header-inventory{
+        gap: 0px;
+        max-width: 1000px;
+    }
+    .Icon{
+        padding-left: 0px;
+    }
+    .orderhp{
+        margin-left: 20px;
+    }
+    .order-req{
+        width: 940px;
+        margin-left: 42px;
+        gap: 500px;
+    }
+    .stocks-table{
+        font-size: 10px;
+        max-width: 1200px;
+    }
+    .stocks-table th{
+        font-size: 16px;
+    }
+    .btn-add-order{
+        width: 250px;
+        font-size: 16px;
+    }
+    .stocks-table{
+        width: 1000px;
+        padding: 5px;
+    }
+}

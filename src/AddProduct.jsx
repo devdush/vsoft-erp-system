@@ -51,15 +51,18 @@ export default function AddProduct() {
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <h2>Add New Product</h2>
+      
       <Box
         sx={{
           backgroundColor: 'background.default',
           padding: { xs: '20px', md: '50px' },
-          display: 'flex',
+          display: '',
           justifyContent: 'center',
           maxWidth: 'auto',
         }}
       >
+        
         <Box
           sx={{
             backgroundColor: 'background.paper',

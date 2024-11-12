@@ -3,23 +3,23 @@
     font-family: Arial, sans-serif;
     color: #333;
     padding: 20px;
-    max-width: 1500px;
-    min-width: 800px;
     margin: 0 auto;
     
   }
   .staffhp h1{
-    font-size: 35px;
+    font-size: 26px;
     text-align: left;
     margin-left: 10px;
+    
   }
   .staffhp p{
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
     margin-left: 10px;
   }
   .staffhp{
     line-height: 0.4;
+    
   }
   
   .staff-management {
@@ -29,15 +29,16 @@
     margin-bottom: 20px;
   }
   
-  .staff-header {
+  .staff-head {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 100px;
+    gap: 200px;
     flex-wrap: wrap;
     margin-top: 50px;
     background-color: #ffff;
     padding: 10px;
+    height: 150px;
     width: 1500px;
     border-radius: 10px;
     padding: 10px 40px 10px 40px;
@@ -48,6 +49,7 @@
     align-items: left;
     position: relative;
     line-height: 0.4;
+    font-size: 14px;
   }
   
   .search-input {
@@ -77,18 +79,19 @@
   }
   
   .staff-count h3 {
-    font-size: 30px;
+    font-size: 26px;
     margin: 0;
     color: #444;
   }
   
   .staff-count p {
-    font-size: 18px;
+    font-size: 14px;
     color: #444;
   }
   .staff-filter{
     line-height: 0.4;
     text-align: left;
+    font-size: 14px;
     
   }
   .staff-filter select {
@@ -98,6 +101,7 @@
     font-size: 16px;
     cursor: pointer;
     background-color: #cee6ff;
+    font-size: 14px;
   }
   
   .btn-add-staff {
@@ -107,7 +111,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .btn-add-staff:hover {
@@ -117,7 +121,7 @@
   
   /* Staff table styling */
   .staff-table{
-    background-color: #ffff;
+    background-color: #ffffff;
     border-radius: 20px;
   }
   .staff-table table {
@@ -150,26 +154,32 @@
     border-radius: 4px;
     cursor: pointer;
     margin-right: 5px;
+    display: flex;
   }
   
   .btn-edit {
-    background-color: #007bff71;
-    color: #007bff;
+    background-color: #00974400;
+    color: #009744;
+    
   }
   
   .btn-edit:hover {
-    background-color: #0056b3;
+    background-color: #00b318;
     color: #ffff;
   }
   
   .btn-delete {
-    background-color: #dc354686;
     color: #dc3545;
+    background-color: rgba(255, 0, 0, 0);
   }
   
   .btn-delete:hover {
     background-color: #c82333;
     color: #ffff;
+  }
+  .btn-add-delete{
+    display: flex;
+    
   }
   /* Pagination styling */
 .pagination {
@@ -197,45 +207,25 @@
     color: white;
   }
   
-  
-  /* Responsive design */
-  @media (max-width: 1920px) {
-    .staff-header {
-      display: flex;
-      width: 1150px;
-      gap: 10px;
-    }
-  
-    .staff-search, .staff-count, .staff-filter, .btn-add-staff {
-      margin-bottom: 10px;
-      
-    }
-    .pagination {
-        margin-top: 20px;
-        text-align: center;
-      }
-    
-  
-    .staff-table table {
-      font-size: 14px;
-    }
-  
-    .staff-table th, .staff-table td {
-      padding: 10px;
-    }
-    
-    .page-button {
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        padding: 5px;
-        margin: 0 1px;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
-
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  
   @media (max-width: 768px) {
-    .staff-header {
+    .staff-head {
       display: flex;
       width: 500px;
       gap: 10px;
@@ -273,4 +263,17 @@
         cursor: pointer;
         border-radius: 5px;
       }
+  }
+  @media (max-width:1900px){
+    .staff-head{
+        width: 1000px;
+        gap: 100px;
+    }
+    .staff-table{
+        font-size: 14px;
+    }
+    .staff-table th{
+        font-size: 16px;
+        text-align: center;
+    }
   }

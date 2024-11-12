@@ -9,12 +9,12 @@
     
   }
   .staffhp h1{
-    font-size: 35px;
+    font-size: 26px;
     text-align: left;
     margin-left: 10px;
   }
   .staffhp p{
-    font-size: 18px;
+    font-size: 14px;
     text-align: left;
     margin-left: 10px;
   }
@@ -33,12 +33,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 80px;
     flex-wrap: wrap;
     margin-top: 50px;
     background-color: #ffff;
     padding: 10px;
-    width: 1500px;
+    width: 1200px;
     border-radius: 10px;
     padding: 10px 40px 10px 40px;
   }
@@ -77,18 +77,19 @@
   }
   
   .staff-count h3 {
-    font-size: 30px;
+    font-size: 26px;
     margin: 0;
     color: #444;
   }
   
   .staff-count p {
-    font-size: 18px;
+    font-size: 14px;
     color: #444;
   }
   .staff-filter{
     line-height: 0.4;
     text-align: left;
+    font-size: 14px
     
   }
   .staff-filter select {
@@ -98,6 +99,7 @@
     font-size: 16px;
     cursor: pointer;
     background-color: #cee6ff;
+    font-size: 14px;
   }
   
   .btn-add-staff {
@@ -107,7 +109,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
   }
   
   .btn-add-staff:hover {
@@ -154,26 +156,7 @@
     
   }
   
-  .btn-edit {
-    background-color: #007bff71;
-    color: #007bff;
-    margin-bottom: 5px;
-  }
-  
-  .btn-edit:hover {
-    background-color: #0056b3;
-    color: #ffff;
-  }
-  
-  .btn-delete {
-    background-color: #dc354686;
-    color: #dc3545;
-  }
-  
-  .btn-delete:hover {
-    background-color: #c82333;
-    color: #ffff;
-  }
+
   /* Pagination styling */
 .pagination {
     margin-top: 20px;
@@ -199,7 +182,62 @@
     background-color: #0056b3;
     color: white;
   }
+  .modal-box {
+    background-color: #fff;
+    width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    outline: none;
+  }
   
+  .modal-box h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .modal-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal-box label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .modal-box input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .modal-box input[type="text"]:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.3);
+  }
+  
+  .modal-box button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 
+  }
   
   /* Responsive design */
   @media (max-width: 1920px) {

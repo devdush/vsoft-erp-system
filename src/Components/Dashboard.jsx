@@ -27,6 +27,8 @@ import AddProduct from '../AddProduct';
 import NewSupplier from '../NewSupplier';
 import ProductList from '../ProductList';
 import Inventory from '../Inventory';
+import OrderRequest from './OrderRequest';
+import AddSupplier from '../AddNewSupplier';
 // Define the navigation
 const NAVIGATION = [
   {
@@ -151,11 +153,11 @@ function DemoPageContent({ pathname }) {
       {pathname === '/staff' && < StaffManagement/>} 
       {pathname === '/supplier' && <NewSupplier />} 
       {pathname === '/inventory' && <Inventory />} 
-      {pathname === '/order' && <ContentY />}
+      {pathname === '/order' && < OrderRequest/>}
       {pathname === '/reports/sales' && <ContentY />} 
       {pathname === '/reports/traffic' && <ContentY />} 
-      {pathname === '/ledger' && <ContentY />} 
-      {pathname === '/company-info' && <ContentY />} 
+      {pathname === '/ledger' && <ProductList />} 
+      {pathname === '/company-info' && <AddProduct />} 
       {pathname === '/settings' && <ContentY />} 
       {pathname === '/notifications' && <ContentY />} 
       {pathname === '/logout' && <ContentY />}

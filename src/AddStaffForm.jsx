@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, MenuItem, Grid, Avatar, IconButton, Typography } from '@mui/material';
 import { Bolt, CloudUpload, FormatBold } from '@mui/icons-material';
+import './AddStaffForm.css'
 
 const roles = ['Manager', 'Staff', 'Supervisor'];
 const levels = ['Junior', 'Mid', 'Senior'];
@@ -21,7 +22,8 @@ const AddStaffForm = () => {
 
   return (
     
-    <form onSubmit={handleSubmit} style={{ padding: '20px'}}>
+    <div className="staffFoem">
+      <form onSubmit={handleSubmit} style={{ padding: '20px'}}>
       <Typography variant="h5" marginBottom={5} fontWeight={700}>
         Add a New Staff
       </Typography>
@@ -193,6 +195,7 @@ const AddStaffForm = () => {
         </Button>
       </div>
     </form>
+    </div>
   );
 };
 

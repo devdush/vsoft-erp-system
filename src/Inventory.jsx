@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { staff, deleteStaff } from './Services/authService'; 
 import './Inventory.css';
-
+import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
+import { blue } from '@mui/material/colors';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import PendingActionsIcon from '@mui/icons-material/PendingActions';
+import { Button, Dialog, DialogTitle, DialogContent, DialogActions, TextField, Radio, RadioGroup, FormControlLabel } from '@mui/material';
+import { Navigate } from 'react-router';
 
 const Inventory = () => {
   const [staffList, setStaffList] = useState([]);
   const [staffCount, setStaffCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterRole, setFilterRole] = useState('All staff');
+  const [openPopup, setOpenPopup] = useState(false); // To control popup visibility
+  const [newCategoryName, setNewCategoryName] = useState('');
+  const [newCategoryStatus, setNewCategoryStatus] = useState(true); // true for active, false for inactive
 
   useEffect(() => {
     const fetchStaffData = async () => {
@@ -23,14 +31,14 @@ const Inventory = () => {
     fetchStaffData();
   }, []);
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+//   const handleSearch = (e) => {
+//     setSearchTerm(e.target.value);
+//   };
 
 
-  const handleFilterChange = (e) => {
-    setFilterRole(e.target.value);
-  };
+//   const handleFilterChange = (e) => {
+//     setFilterRole(e.target.value);
+//   };
 
 //   Filter staff based on email and serial number
   const filteredStaff = staffList.filter(staffMember => {
@@ -42,6 +50,29 @@ const Inventory = () => {
     return matchesSearchTerm && matchesRole;
   });
 
+  
+// Open the popup
+const handleAddCategoryClick = () => {
+    
+  };
+
+  // Close the popup and reset the fields
+  const handleClosePopup = () => {
+    setOpenPopup(false);
+    setNewCategoryName('');
+    setNewCategoryStatus(true);
+  };
+
+  // Add new category handler
+  const handleAddCategory = () => {
+    const newCategory = {
+      id: staffList.length + 1, // Just a temporary ID for illustration
+      studentCode: newCategoryName,
+      isActive: newCategoryStatus,
+    };
+    setStaffList([...staffList, newCategory]);
+    handleClosePopup();
+  };
 
   return (
     
@@ -73,9 +104,12 @@ const Inventory = () => {
         <div className="tot-req-count">
          <div className="tot-req-count-hp">
           <h3>{staffCount}</h3>
-          <p>Total Request made</p>
+          <p>Total Requests made</p>
          </div>
-         <p>Icon </p>
+         
+         <div className="Icon">
+         <p className='icon1'><LocalMallRoundedIcon/></p>
+         </div>
          </div>
 
          <div className="cost-count">
@@ -83,7 +117,9 @@ const Inventory = () => {
           <h3>{staffCount}</h3>
           <p>Total cost incurred</p>
          </div>
-         <p>Icon </p>
+         <div className="Icon">
+         <p className='icon2'><MonetizationOnIcon /></p>
+         </div>
          </div>
 
          <div className="pending-req-count">
@@ -91,7 +127,9 @@ const Inventory = () => {
           <h3>{staffCount}</h3>
           <p>Pending requests</p>
          </div>
-         <p>Icon </p>
+         <div className="Icon">
+         <p className='icon3'><PendingActionsIcon/></p>
+         </div>
          </div>
 
          <div className="approved-req-count">
@@ -99,7 +137,9 @@ const Inventory = () => {
           <h3>{staffCount}</h3>
           <p>Approved requests</p>
          </div>
-         <p>Icon </p>
+         <div className="Icon">
+         <p className='icon4'><LocalMallRoundedIcon/></p>
+         </div>
          </div>
         </div>
 
@@ -117,10 +157,32 @@ const Inventory = () => {
 
         {/* make order req button */}
        <div className="order-req">
-        <h2>Order Request</h2>
-        <button className="btn-add-order">Make Order Request</button>
+        <h3>Order Request</h3>
+        <button className="btn-add-order" onClick={handleAddCategoryClick}>Make Order Request</button>
        </div>
+       
+       <div className="popup-box">
+       <Dialog open={openPopup} onClose={handleClosePopup} classes={{ paper: 'dialog-paper' }}>
+            <DialogTitle className="dialog-title">Order Request</DialogTitle>
+            <DialogContent className="dialog-content">
+                <label className='input-name' >
+                    Short Name 
+                    <input type='text' placeholder='Enter short name' className='input-field'>
+
+                    </input>
+                </label>
+            </DialogContent>
+        <DialogActions>
+        <Button className="btn-make-order" onClick={handleAddCategory} variant="contained" color="primary">
+            Make order request
+        </Button>
+            <Button className="btn-cancel" onClick={handleClosePopup} variant="outlined" color="secondary">
+                Cancel
+            </Button>
+            </DialogActions>
+        </Dialog>
         
+       </div>
 
       </div>
 
@@ -130,7 +192,6 @@ const Inventory = () => {
           <thead>
             <tr>
               <th>S/N</th>
-              <th>Image</th>
               <th>Product Name</th>
               <th>Product ID</th>
               <th>Category</th>
@@ -147,7 +208,7 @@ const Inventory = () => {
             {filteredStaff.map((staffMember, index) => (
               <tr key={index}>
                 <td>{staffMember.studentCode}</td>
-                <td> </td>
+                
                 <td>{staffMember.studentName}</td>
                 <td>{staffMember.pcCode}</td>
                 <td>{staffMember.centerCode}</td>

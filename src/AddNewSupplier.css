@@ -1,0 +1,142 @@
+/* AddNewSupplier.css */
+
+.add-supplier-container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.supplier-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-photo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #ddd;
+}
+
+.upload-photo input[type="file"] {
+  display: none;
+}
+
+.upload-photo p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.field-group input,
+.field-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  border-color: #007bff;
+}
+
+.field-group select {
+  appearance: none;
+  background-color: #fff;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-supplier-container {
+    padding: 15px;
+  }
+  
+  .upload-photo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .field-group input,
+  .field-group select,
+  .submit-button {
+    font-size: 0.9rem;
+  }
+}
